@@ -3,22 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Lands.Views.LoginPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             Title="Login">
+             Title="Lands">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout
-            Padding="10,20,10,5">
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="Large"
-                    HorizontalOptions="Center"
-                    Text="Lands">
-                </Label>
+                Padding="5">
                 <Image
                     Source="onu"
                     WidthRequest="150">
                 </Image>
-                <Grid>
+                <Grid
+                    Margin="10,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="2*" />
@@ -56,6 +51,7 @@
                 </Grid>
                 <ActivityIndicator></ActivityIndicator>
                 <StackLayout
+                    Margin="10,0"
                     Orientation="Horizontal">
                     <Label
                             HorizontalOptions="StartAndExpand"
@@ -69,14 +65,17 @@
                 <Label
                     HorizontalOptions="Center"
                     Text="Forgot your Password?"
-                    TextColor="Blue">
+                    TextColor="Blue"
+                    VerticalOptions="Center">
                 </Label>
                 <StackLayout
-                Margin="40,0">
+                    Margin="40,0"
+                    Orientation="Horizontal">
                     <Button
                         BackgroundColor="Navy"
                         BorderRadius="23"
                         HeightRequest="46"
+                        HorizontalOptions="FillAndExpand"
                         Text="Login"
                         TextColor="White">
                     </Button>
@@ -84,6 +83,7 @@
                         BackgroundColor="Purple"
                         BorderRadius="23"
                         HeightRequest="46"
+                        HorizontalOptions="FillAndExpand"
                         Text="Register"
                         TextColor="White">
                     </Button>
