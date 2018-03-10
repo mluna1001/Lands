@@ -54,6 +54,7 @@
                         VerticalOptions="Center">
                     </Entry>
                 </Grid>
+                <ActivityIndicator></ActivityIndicator>
                 <StackLayout
                     Orientation="Horizontal">
                     <Label
@@ -65,7 +66,11 @@
                         HorizontalOptions="End">
                     </Switch>
                 </StackLayout>
-                <ActivityIndicator></ActivityIndicator>
+                <Label
+                    HorizontalOptions="Center"
+                    Text="Forgot your Password?"
+                    TextColor="Blue">
+                </Label>
                 <StackLayout
                 Margin="40,0">
                     <Button
