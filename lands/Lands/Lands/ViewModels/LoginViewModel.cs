@@ -2,6 +2,7 @@
 {
     using GalaSoft.MvvmLight.Command;
     using System.Windows.Input;
+    using Views;
     using Xamarin.Forms;
 
     public class LoginViewModel : BaseViewModel
@@ -16,7 +17,8 @@
         #region Properties
         public string Email
         {
-            get; set;
+            get { return this.email; }
+            set { SetValue(ref this.email, value); }
         }
         public string Password
         {
@@ -43,8 +45,12 @@
         public LoginViewModel()
         {
             this.IsRemembered = true;
-            this.IsRunning = false;
             this.IsEnabled = true;
+
+            this.Email = "mluna1001@gmail.com";
+            this.Password = "1234";
+
+            // http://restcountries.eu/rest/v2/all
         }
         #endregion
 
@@ -99,6 +105,13 @@
 
             this.IsRunning = false;
             this.IsEnabled = true;
+
+            this.Email = string.Empty;
+            this.Password = string.Empty;
+
+            MainViewModel.GetInstance().Lands = new LandsViewModel();
+
+            await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
         }
         #endregion
     }
