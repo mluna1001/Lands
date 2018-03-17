@@ -37,6 +37,19 @@
         #region Methods
         private async void LoadLands()
         {
+            var connetion = await this.apiService.CheckConnection();
+
+            if (!connetion.IsSuccess)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                   "Error",
+                   connetion.Message,
+                   "Accept"
+                   );
+                await Application.Current.MainPage.Navigation.PopAsync();
+                return;
+            }
+
             var response = await this.apiService.GetList<Land>(
                 "http://restcountries.eu/",
                 "/rest",
@@ -49,6 +62,7 @@
                     response.Message,
                     "Accept"
                     );
+                await Application.Current.MainPage.Navigation.PopAsync();
                 return;
             }
 

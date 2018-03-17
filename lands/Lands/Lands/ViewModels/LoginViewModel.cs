@@ -98,10 +98,10 @@
                 return;
             }
 
-            await Application.Current.MainPage.DisplayAlert(
-                    "Ok",
-                    "Fuck yeah!!",
-                    "Accept");
+            //await Application.Current.MainPage.DisplayAlert(
+            //        "Ok",
+            //        "Fuck yeah!!",
+            //        "Accept");
 
             this.IsRunning = false;
             this.IsEnabled = true;
