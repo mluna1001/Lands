@@ -1,10 +1,12 @@
 ﻿namespace Lands.ViewModels
 {
+    using GalaSoft.MvvmLight.Command;
     using Models;
     using Services;
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Windows.Input;
     using Xamarin.Forms;
 
     public class LandsViewModel : BaseViewModel
@@ -14,14 +16,21 @@
         #endregion
 
         #region Attributes
-        private ObservableCollection<Land> lands;
+        private ObservableCollection<Land> landsList;
+        private bool isRefreshing;
         #endregion
 
         #region Properties
-        public ObservableCollection<Land> Lands
+        public ObservableCollection<Land> LandsList
         {
-            get { return this.lands; }
-            set { SetValue(ref this.lands, value); }
+            get { return this.landsList; }
+            set { SetValue(ref this.landsList, value); }
+        }
+
+        public bool IsRefreshing
+        {
+            get { return this.isRefreshing; }
+            set { SetValue(ref this.isRefreshing, value); }
         }
         #endregion
 
@@ -37,15 +46,18 @@
         #region Methods
         private async void LoadLands()
         {
+            this.IsRefreshing = true;
             var connetion = await this.apiService.CheckConnection();
 
             if (!connetion.IsSuccess)
             {
+                this.IsRefreshing = false;
                 await Application.Current.MainPage.DisplayAlert(
                    "Error",
                    connetion.Message,
                    "Accept"
                    );
+
                 await Application.Current.MainPage.Navigation.PopAsync();
                 return;
             }
@@ -57,6 +69,7 @@
 
             if (!response.IsSuccess)
             {
+                this.IsRefreshing = false;
                 await Application.Current.MainPage.DisplayAlert(
                     "Error",
                     response.Message,
@@ -67,7 +80,23 @@
             }
 
             var list = (List<Land>)response.Result;
-            this.Lands = new ObservableCollection<Land>(list);
+            this.LandsList = new ObservableCollection<Land>(list);
+            this.IsRefreshing = false;
+        }
+        #endregion
+
+        #region Commands
+        public ICommand RefreshCommand
+        {
+            get
+            {
+                return new RelayCommand(LoadLands);
+            }
+        }
+
+        public void Refresh()
+        {
+            this.LoadLands();
         }
         #endregion
     }
