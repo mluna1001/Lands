@@ -9,6 +9,7 @@
             BindingContext="{Binding Lands}">
             <SearchBar
                 BackgroundColor="Silver"
+                HeightRequest="45"
                 Placeholder="Search..."
                 SearchCommand="{Binding SearchCommand}"
                 Text="{Binding Filter, Mode=TwoWay}">
@@ -28,6 +29,11 @@
                                 CornerRadius="20"
                                 HasShadow="True"
                                 Margin="5">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding SelectLandCommand}">
+                                    </TapGestureRecognizer>
+                                </Frame.GestureRecognizers>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
