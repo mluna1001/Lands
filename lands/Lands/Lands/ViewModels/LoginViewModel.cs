@@ -52,7 +52,10 @@
             this.apiService = new ApiService();
 
             this.IsRemembered = true;
-            this.IsEnabled = true;          
+            this.IsEnabled = true;
+
+            this.Email = "sitatyr.ctm@gmail.com";
+            this.Password = "123456";
 
             // http://restcountries.eu/rest/v2/all
         }
