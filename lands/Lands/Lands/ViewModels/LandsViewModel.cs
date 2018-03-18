@@ -6,6 +6,7 @@
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Linq;
     using System.Windows.Input;
     using Xamarin.Forms;
 
@@ -16,21 +17,33 @@
         #endregion
 
         #region Attributes
-        private ObservableCollection<Land> landsList;
+        private ObservableCollection<Land> lands;
         private bool isRefreshing;
+        private string filter;
+        private List<Land> landsList;
         #endregion
 
         #region Properties
-        public ObservableCollection<Land> LandsList
+        public ObservableCollection<Land> Lands
         {
-            get { return this.landsList; }
-            set { SetValue(ref this.landsList, value); }
+            get { return this.lands; }
+            set { SetValue(ref this.lands, value); }
         }
 
         public bool IsRefreshing
         {
             get { return this.isRefreshing; }
             set { SetValue(ref this.isRefreshing, value); }
+        }
+
+        public string Filter
+        {
+            get { return this.filter; }
+            set
+            {
+                SetValue(ref this.filter, value);
+                this.Search();
+            }
         }
         #endregion
 
@@ -79,8 +92,8 @@
                 return;
             }
 
-            var list = (List<Land>)response.Result;
-            this.LandsList = new ObservableCollection<Land>(list);
+            this.landsList = (List<Land>)response.Result;
+            this.Lands = new ObservableCollection<Land>(this.landsList);
             this.IsRefreshing = false;
         }
         #endregion
@@ -94,9 +107,27 @@
             }
         }
 
-        public void Refresh()
+        public ICommand SearchCommand
         {
-            this.LoadLands();
+            get
+            {
+                return new RelayCommand(Search);
+            }
+        }
+
+        public void Search()
+        {
+            if (string.IsNullOrEmpty(this.Filter))
+            {
+                this.Lands = new ObservableCollection<Land>(
+                    this.landsList);
+            }
+            else
+            {
+                this.Lands = new ObservableCollection<Land>(
+                    this.landsList.Where(l => l.Name.ToLower().Contains(this.Filter.ToLower()) 
+                    || l.Capital.ToLower().Contains(this.Filter.ToLower())));
+            }
         }
         #endregion
     }

@@ -13,6 +13,7 @@
         public MainViewModel()
         {
             this.Login = new LoginViewModel();
+            this.Lands = new LandsViewModel();
         }
         #endregion
 
