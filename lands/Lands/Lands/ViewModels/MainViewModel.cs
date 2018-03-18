@@ -13,9 +13,8 @@
         #region Constructors
         public MainViewModel()
         {
+            instance = this;
             this.Login = new LoginViewModel();
-            this.Lands = new LandsViewModel();
-            this.Land = new LandViewModel();
         }
         #endregion
 
