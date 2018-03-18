@@ -20,7 +20,6 @@
         private ObservableCollection<LandItemViewModel> lands;
         private bool isRefreshing;
         private string filter;
-        private List<Land> landsList;
         #endregion
 
         #region Properties
@@ -92,15 +91,15 @@
                 return;
             }
 
-            this.landsList = (List<Land>)response.Result;
+            MainViewModel.GetInstance().LandsList = (List<Land>)response.Result;
             this.Lands = new ObservableCollection<LandItemViewModel>(
-                this.ToLandItemViewModel(this.landsList));
+                this.ToLandItemViewModel());
             this.IsRefreshing = false;
         }
 
-        private IEnumerable<LandItemViewModel> ToLandItemViewModel(List<Land> landsList)
+        private IEnumerable<LandItemViewModel> ToLandItemViewModel()
         {
-            return landsList.Select(l => new LandItemViewModel
+            return MainViewModel.GetInstance().LandsList.Select(l => new LandItemViewModel
             {
                 Alpha2Code = l.Alpha2Code,
                 Alpha3Code = l.Alpha3Code,
@@ -152,12 +151,12 @@
             if (string.IsNullOrEmpty(this.Filter))
             {
                 this.Lands = new ObservableCollection<LandItemViewModel>(
-                    this.ToLandItemViewModel(this.landsList));
+                    this.ToLandItemViewModel());
             }
             else
             {
                 this.Lands = new ObservableCollection<LandItemViewModel>(
-                    this.ToLandItemViewModel(this.landsList).Where(
+                    this.ToLandItemViewModel().Where(
                         l => l.Name.ToLower().Contains(this.Filter.ToLower()) || 
                              l.Capital.ToLower().Contains(this.Filter.ToLower())));
             }
