@@ -1,6 +1,7 @@
 ﻿namespace Lands.Services
 {
-    using Lands.Models;
+    using Helpers;
+    using Models;
     using Newtonsoft.Json;
     using Plugin.Connectivity;
     using System;
@@ -19,7 +20,7 @@
                 return new Response
                 {
                     IsSuccess = false,
-                    Message = "Plase turn on your internet settings"
+                    Message = Languages.ConnectionValidation
                 };
             }
 
@@ -29,7 +30,7 @@
                 return new Response
                 {
                     IsSuccess = false,
-                    Message = "Check your internet connection"
+                    Message = Languages.InternetValidation
                 };
             }
 

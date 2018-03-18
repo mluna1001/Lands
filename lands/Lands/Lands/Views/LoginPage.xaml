@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:Lands.Helpers"
              x:Class="Lands.Views.LoginPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             Title="Lands">
+             Title="{i18n:Translate Title}">
     <ContentPage.Content>
         <ScrollView
             BindingContext="{Binding Login}">
@@ -32,7 +33,7 @@
                         Grid.Column="1"
                         Grid.Row="0"
                         Keyboard="Email"
-                        Placeholder="Enter your email..."
+                        Placeholder="{i18n:Translate EmailPlaceholder}"
                         Text="{Binding Email, Mode=TwoWay}"
                         VerticalOptions="Center">
                     </Entry>
@@ -41,14 +42,14 @@
                         FontSize="Large"
                         Grid.Column="0"
                         Grid.Row="1"
-                        Text="Password"
+                        Text="{i18n:Translate PasswordLabel}"
                         VerticalOptions="Center">
                     </Label>
                     <Entry
                         Grid.Column="1"
                         Grid.Row="1"
                         IsPassword="True"
-                        Placeholder="Enter your password..."
+                        Placeholder="{i18n:Translate PasswordPlaceholder}"
                         Text="{Binding Password, Mode=TwoWay}"
                         VerticalOptions="Center">
                     </Entry>
@@ -63,7 +64,7 @@
                     VerticalOptions="CenterAndExpand">
                     <Label
                             HorizontalOptions="StartAndExpand"
-                            Text="Remember me in this device"
+                            Text="{i18n:Translate RememberMe}"
                             VerticalOptions="Center">
                     </Label>
                     <Switch
@@ -73,7 +74,7 @@
                 </StackLayout>
                 <Label
                     HorizontalOptions="Center"
-                    Text="Forgot your Password?"
+                    Text="{i18n:Translate ForgotPassword}"
                     TextColor="Blue"
                     VerticalOptions="CenterAndExpand">
                 </Label>
@@ -88,7 +89,7 @@
                         HeightRequest="46"
                         HorizontalOptions="FillAndExpand"
                         IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
-                        Text="Login"
+                        Text="{i18n:Translate LoginButton}"
                         TextColor="White">
                     </Button>
                     <Button
@@ -97,7 +98,7 @@
                         HeightRequest="46"
                         HorizontalOptions="FillAndExpand"
                         IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
-                        Text="Register"
+                        Text="{i18n:Translate RegisterButton}"
                         TextColor="White">
                     </Button>
                 </StackLayout>
