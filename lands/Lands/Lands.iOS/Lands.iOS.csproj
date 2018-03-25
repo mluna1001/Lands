@@ -180,4 +180,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\ic_action_translate.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Referencias\System.Configuration.dll" />
+  </ItemGroup>
 </Project>

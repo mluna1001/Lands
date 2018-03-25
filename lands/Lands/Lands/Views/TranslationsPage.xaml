@@ -3,9 +3,10 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Lands.Views.TranslationsPage"
+    xmlns:i18n="clr-namespace:Lands.Helpers"
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
     Icon="ic_action_translate"
-    Title="Translations">
+    Title="{i18n:Translate Translations}">
     <ContentPage.Content>
         <StackLayout
             BindingContext="{Binding Land}"
@@ -22,135 +23,165 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-                <Label
-                    Grid.Column="0"
-                    Grid.Row="0"
-                    Text="Germany:"
-                    TextColor="Black">
+                <Label Grid.Column='0' Grid.Row='0' TextColor='Black' VerticalOptions='Center'>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text='{i18n:Translate German}' FontAttributes='Bold' />
+                            <Span Text=': '  />
+                        </FormattedString>
+                    </Label.FormattedText>
                 </Label>
                 <Label
                     Grid.Column="1"
                     Grid.Row="0"
                     FontAttributes="Bold"
                     Text="{Binding Land.Translations.Germany}"
-                    TextColor="Black">
+                    TextColor="Black"
+                    VerticalOptions="Center">
                 </Label>
-                <Label
-                    Grid.Column="0"
-                    Grid.Row="1"
-                    Text="Spanish:"
-                    TextColor="Black">
+                <Label Grid.Column='0' Grid.Row='1' TextColor='Black' VerticalOptions='Center'>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text='{i18n:Translate Spanish}' FontAttributes='Bold' />
+                            <Span Text=': '  />
+                        </FormattedString>
+                    </Label.FormattedText>
                 </Label>
                 <Label
                     Grid.Column="1"
                     Grid.Row="1"
                     FontAttributes="Bold"
                     Text="{Binding Land.Translations.Spanish}"
-                    TextColor="Black">
+                    TextColor="Black"
+                    VerticalOptions="Center">
                 </Label>
-                <Label
-                    Grid.Column="0"
-                    Grid.Row="2"
-                    Text="French:"
-                    TextColor="Black">
+                <Label Grid.Column='0' Grid.Row='2' TextColor='Black' VerticalOptions='Center'>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text='{i18n:Translate French}' FontAttributes='Bold' />
+                            <Span Text=': '  />
+                        </FormattedString>
+                    </Label.FormattedText>
                 </Label>
                 <Label
                     Grid.Column="1"
                     Grid.Row="2"
                     FontAttributes="Bold"
                     Text="{Binding Land.Translations.French}"
-                    TextColor="Black">
+                    TextColor="Black"
+                    VerticalOptions="Center">
                 </Label>
-                <Label
-                    Grid.Column="0"
-                    Grid.Row="3"
-                    Text="Japanese:"
-                    TextColor="Black">
+                <Label Grid.Column='0' Grid.Row='3' TextColor='Black' VerticalOptions='Center'>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text='{i18n:Translate Japanese}' FontAttributes='Bold' />
+                            <Span Text=': '  />
+                        </FormattedString>
+                    </Label.FormattedText>
                 </Label>
                 <Label
                     Grid.Column="1"
                     Grid.Row="3"
                     FontAttributes="Bold"
                     Text="{Binding Land.Translations.Japanese}"
-                    TextColor="Black">
+                    TextColor="Black"
+                    VerticalOptions="Center">
                 </Label>
-                <Label
-                    Grid.Column="0"
-                    Grid.Row="4"
-                    Text="Italian:"
-                    TextColor="Black">
+                <Label Grid.Column='0' Grid.Row='4' TextColor='Black' VerticalOptions='Center'>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text='{i18n:Translate Italian}' FontAttributes='Bold' />
+                            <Span Text=': '  />
+                        </FormattedString>
+                    </Label.FormattedText>
                 </Label>
                 <Label
                     Grid.Column="1"
                     Grid.Row="4"
                     FontAttributes="Bold"
                     Text="{Binding Land.Translations.Italian}"
-                    TextColor="Black">
+                    TextColor="Black"
+                    VerticalOptions="Center">
                 </Label>
-                <Label
-                    Grid.Column="0"
-                    Grid.Row="5"
-                    Text="Brazilian:"
-                    TextColor="Black">
+                <Label Grid.Column='0' Grid.Row='5' TextColor='Black' VerticalOptions='Center'>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text='{i18n:Translate Brazilian}' FontAttributes='Bold' />
+                            <Span Text=': '  />
+                        </FormattedString>
+                    </Label.FormattedText>
                 </Label>
                 <Label
                     Grid.Column="1"
                     Grid.Row="5"
                     FontAttributes="Bold"
                     Text="{Binding Land.Translations.Brazilian}"
-                    TextColor="Black">
+                    TextColor="Black"
+                    VerticalOptions="Center">
                 </Label>
-                <Label
-                    Grid.Column="0"
-                    Grid.Row="6"
-                    Text="Portuges:"
-                    TextColor="Black">
+                <Label Grid.Column='0' Grid.Row='6' TextColor='Black' VerticalOptions='Center'>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text='{i18n:Translate Portuguese}' FontAttributes='Bold' />
+                            <Span Text=': '  />
+                        </FormattedString>
+                    </Label.FormattedText>
                 </Label>
                 <Label
                     Grid.Column="1"
                     Grid.Row="6"
                     FontAttributes="Bold"
                     Text="{Binding Land.Translations.Portuges}"
-                    TextColor="Black">
+                    TextColor="Black"
+                    VerticalOptions="Center">
                 </Label>
-                <Label
-                    Grid.Column="0"
-                    Grid.Row="7"
-                    Text="Dutch:"
-                    TextColor="Black">
+                <Label Grid.Column='0' Grid.Row='7' TextColor='Black' VerticalOptions='Center'>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text='{i18n:Translate Dutch}' FontAttributes='Bold' />
+                            <Span Text=': '  />
+                        </FormattedString>
+                    </Label.FormattedText>
                 </Label>
                 <Label
                     Grid.Column="1"
                     Grid.Row="7"
                     FontAttributes="Bold"
                     Text="{Binding Land.Translations.Dutch}"
-                    TextColor="Black">
+                    TextColor="Black"
+                    VerticalOptions="Center">
                 </Label>
-                <Label
-                    Grid.Column="0"
-                    Grid.Row="8"
-                    Text="Croatian:"
-                    TextColor="Black">
+                <Label Grid.Column='0' Grid.Row='8' TextColor='Black' VerticalOptions='Center'>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text='{i18n:Translate Croatian}' FontAttributes='Bold' />
+                            <Span Text=': '  />
+                        </FormattedString>
+                    </Label.FormattedText>
                 </Label>
                 <Label
                     Grid.Column="1"
                     Grid.Row="8"
                     FontAttributes="Bold"
                     Text="{Binding Land.Translations.Croatian}"
-                    TextColor="Black">
+                    TextColor="Black"
+                    VerticalOptions="Center">
                 </Label>
-                <Label
-                    Grid.Column="0"
-                    Grid.Row="9"
-                    Text="Persian:"
-                    TextColor="Black">
+                <Label Grid.Column='0' Grid.Row='9' TextColor='Black' VerticalOptions='Center'>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text='{i18n:Translate Persian}' FontAttributes='Bold' />
+                            <Span Text=': '  />
+                        </FormattedString>
+                    </Label.FormattedText>
                 </Label>
                 <Label
                     Grid.Column="1"
                     Grid.Row="9"
                     FontAttributes="Bold"
                     Text="{Binding Land.Translations.Persian}"
-                    TextColor="Black">
+                    TextColor="Black"
+                    VerticalOptions="Center">
                 </Label>
             </Grid>
         </StackLayout>

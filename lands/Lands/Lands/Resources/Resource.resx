@@ -121,9 +121,37 @@
     <value>Accept</value>
     <comment>2</comment>
   </data>
+  <data name="AlphaCode2" xml:space="preserve">
+    <value>Alpha Code 2</value>
+    <comment>Q</comment>
+  </data>
+  <data name="AlphaCode3" xml:space="preserve">
+    <value>Alpha Code 3</value>
+    <comment>R</comment>
+  </data>
+  <data name="Area" xml:space="preserve">
+    <value>Area</value>
+    <comment>P</comment>
+  </data>
+  <data name="Borders" xml:space="preserve">
+    <value>Borders</value>
+    <comment>I</comment>
+  </data>
+  <data name="Capital" xml:space="preserve">
+    <value>Capital</value>
+    <comment>M</comment>
+  </data>
+  <data name="CIOC" xml:space="preserve">
+    <value>CIOC</value>
+    <comment>X</comment>
+  </data>
   <data name="ConnectionValidation" xml:space="preserve">
     <value>Please turn on your internet settings</value>
     <comment>D</comment>
+  </data>
+  <data name="Currencies" xml:space="preserve">
+    <value>Currencies</value>
+    <comment>J</comment>
   </data>
   <data name="EmailPlaceholder" xml:space="preserve">
     <value>Enter your email...</value>
@@ -141,13 +169,33 @@
     <value>Forgot your password?</value>
     <comment>A</comment>
   </data>
+  <data name="GINI" xml:space="preserve">
+    <value>GINI</value>
+    <comment>U</comment>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Information</value>
+    <comment>H</comment>
+  </data>
   <data name="InternetValidation" xml:space="preserve">
     <value>Check your internet connection</value>
     <comment>F</comment>
   </data>
+  <data name="LanguagesTitle" xml:space="preserve">
+    <value>Languages</value>
+    <comment>L</comment>
+  </data>
   <data name="LoginButton" xml:space="preserve">
     <value>Login</value>
     <comment>B</comment>
+  </data>
+  <data name="NativeName" xml:space="preserve">
+    <value>NativeName</value>
+    <comment>V</comment>
+  </data>
+  <data name="NumericCode" xml:space="preserve">
+    <value>NumericCode</value>
+    <comment>W</comment>
   </data>
   <data name="PasswordLabel" xml:space="preserve">
     <value>Password</value>
@@ -161,6 +209,14 @@
     <value>You must enter a password</value>
     <comment>8</comment>
   </data>
+  <data name="Population" xml:space="preserve">
+    <value>Population</value>
+    <comment>O</comment>
+  </data>
+  <data name="Region" xml:space="preserve">
+    <value>Region</value>
+    <comment>S</comment>
+  </data>
   <data name="RegisterButton" xml:space="preserve">
     <value>Register</value>
     <comment>C</comment>
@@ -169,6 +225,14 @@
     <value>Remember me in this device</value>
     <comment>9</comment>
   </data>
+  <data name="Search" xml:space="preserve">
+    <value>Seach...</value>
+    <comment>G</comment>
+  </data>
+  <data name="Subregion" xml:space="preserve">
+    <value>Subregion</value>
+    <comment>T</comment>
+  </data>
   <data name="Title" xml:space="preserve">
     <value>Lands</value>
     <comment>1</comment>
@@ -176,5 +240,57 @@
   <data name="TokenValidation" xml:space="preserve">
     <value>Something was wrong, please try later.</value>
     <comment>E</comment>
+  </data>
+  <data name="Translations" xml:space="preserve">
+    <value>Translations</value>
+    <comment>K</comment>
+  </data>
+  <data name="Land" xml:space="preserve">
+    <value>Land</value>
+    <comment>0</comment>
+  </data>
+  <data name="Denomination" xml:space="preserve">
+    <value>Denomination</value>
+    <comment>Y</comment>
+  </data>
+  <data name="Brazilian" xml:space="preserve">
+    <value>Brazilian</value>
+    <comment>A4</comment>
+  </data>
+  <data name="Croatian" xml:space="preserve">
+    <value>Croatian</value>
+    <comment>A7</comment>
+  </data>
+  <data name="Dutch" xml:space="preserve">
+    <value>Dutch</value>
+    <comment>A6</comment>
+  </data>
+  <data name="French" xml:space="preserve">
+    <value>French</value>
+    <comment>A1</comment>
+  </data>
+  <data name="German" xml:space="preserve">
+    <value>German</value>
+    <comment>Z</comment>
+  </data>
+  <data name="Italian" xml:space="preserve">
+    <value>Italian</value>
+    <comment>A3</comment>
+  </data>
+  <data name="Japanese" xml:space="preserve">
+    <value>Japanese</value>
+    <comment>A2</comment>
+  </data>
+  <data name="Persian" xml:space="preserve">
+    <value>Persian</value>
+    <comment>A8</comment>
+  </data>
+  <data name="Portuguese" xml:space="preserve">
+    <value>Portuguese</value>
+    <comment>A5</comment>
+  </data>
+  <data name="Spanish" xml:space="preserve">
+    <value>Spanish</value>
+    <comment>A0</comment>
   </data>
 </root>
