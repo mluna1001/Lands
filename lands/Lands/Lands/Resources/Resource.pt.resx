@@ -293,4 +293,20 @@
     <value>Espanhol</value>
     <comment>A0</comment>
   </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menu</value>
+    <comment>A9</comment>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Sair</value>
+    <comment>47</comment>
+  </data>
+  <data name="MyProfile" xml:space="preserve">
+    <value>Meu perfil</value>
+    <comment>45</comment>
+  </data>
+  <data name="Statics" xml:space="preserve">
+    <value>Estatisticas</value>
+    <comment>46</comment>
+  </data>
 </root>

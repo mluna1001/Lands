@@ -123,6 +123,9 @@
     <PackageReference Include="Xam.Plugin.Connectivity">
       <Version>3.1.1</Version>
     </PackageReference>
+    <PackageReference Include="Xam.Plugins.Settings">
+      <Version>3.1.1</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading">
       <Version>2.3.4</Version>
     </PackageReference>
@@ -182,5 +185,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Referencias\System.Configuration.dll" />
+    <BundleResource Include="Resources\ic_exit_to_app.png" />
+    <BundleResource Include="Resources\ic_insert_chart.png" />
+    <BundleResource Include="Resources\ic_settings.png" />
   </ItemGroup>
 </Project>

@@ -1,8 +1,12 @@
 ﻿namespace Lands.ViewModels
 {
+    using GalaSoft.MvvmLight.Command;
+    using Lands.Helpers;
     using Models;
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Windows.Input;
 
     public class MainViewModel
     {
@@ -13,11 +17,30 @@
             set;
         }
 
-        public TokenResponse Token
+        public string Token
         {
             get;
             set;
         }
+
+        public string TokenType
+        {
+            get;
+            set;
+        }
+        
+        //public TokenResponse Token
+        //{
+        //    get;
+        //    set;
+        //}
+
+        public ObservableCollection<MenuItemViewModel> Menus
+        {
+            get;
+            set;
+        }
+
         #endregion
 
         #region ViewModels
@@ -31,6 +54,7 @@
         {
             instance = this;
             this.Login = new LoginViewModel();
+            this.LoadMenu();
         }
         #endregion
 
@@ -47,5 +71,31 @@
             return instance;
         }
         #endregion
+
+        #region Methods
+        private void LoadMenu()
+        {
+            this.Menus = new ObservableCollection<MenuItemViewModel>();
+            this.Menus.Add(new MenuItemViewModel
+            {
+                Icon= "ic_settings",
+                Title=Languages.MyProfile,
+                PageName="MyProfilePage"
+            });
+            this.Menus.Add(new MenuItemViewModel
+            {
+                Icon = "ic_insert_chart",
+                Title = Languages.Statics,
+                PageName = "StaticsPage"
+            });
+            this.Menus.Add(new MenuItemViewModel
+            {
+                Icon = "ic_exit_to_app",
+                Title = Languages.Logout,
+                PageName = "LoginPage"
+            });
+        }
+        #endregion
+
     }
 }
