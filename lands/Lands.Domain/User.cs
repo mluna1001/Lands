@@ -32,6 +32,11 @@
         [Display(Name = "Image")]
         public string ImagePath { get; set; }
 
+        public int UserTypeId { get; set; }
+
+        [JsonIgnore]
+        public virtual UserType UserType { get; set; }
+
         [Display(Name = "Image")]
         public string ImageFullPath
         {
@@ -56,5 +61,7 @@
                 return string.Format("{0} {1}", this.FirstName, this.LastName);
             }
         }
+
+        
     }
 }
