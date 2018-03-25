@@ -4,7 +4,7 @@
 
     public class DataContext : DbContext
     {
-        public DataContext() : base("DefalutConnection")
+        public DataContext() : base("DefaultConnection")
         {
 
         }
