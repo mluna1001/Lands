@@ -58,18 +58,18 @@
         //    return View(view);
         //}
 
-        private User ToUser(UserView view)
-        {
-            return new User
-            {
-                Email = view.Email,
-                FirstName = view.FirstName,
-                ImagePath = view.ImagePath,
-                LastName = view.LastName,
-                Telephone = view.Telephone,
-                UserId = view.UserId
-            };
-        }
+        //private User ToUser(UserView view)
+        //{
+        //    return new User
+        //    {
+        //        Email = view.Email,
+        //        FirstName = view.FirstName,
+        //        ImagePath = view.ImagePath,
+        //        LastName = view.LastName,
+        //        Telephone = view.Telephone,
+        //        UserId = view.UserId
+        //    };
+        //}
 
         //// GET: Users/Edit/5
         //public ActionResult Edit(int? id)
