@@ -3,6 +3,7 @@
     using GalaSoft.MvvmLight.Command;
     using Helpers;
     using Services;
+    using System;
     using System.Windows.Input;
     using Views;
     using Xamarin.Forms;
@@ -106,8 +107,9 @@
                 return;
             }
 
+            var apiSecurity = Application.Current.Resources["APISecurity"].ToString();
             var token = await this.apiService.GetToken(
-                "http://landsapi1.azurewebsites.net",
+                apiSecurity,
                 this.Email,
                 this.Password);
 
@@ -155,6 +157,20 @@
 
             this.Email = string.Empty;
             this.Password = string.Empty;
+        }
+
+        public ICommand RegisterCommand
+        {
+            get
+            {
+                return new RelayCommand(Register);
+            }
+        }
+
+        private async void Register()
+        {
+            MainViewModel.GetInstance().Register = new RegisterViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new RegisterPage());
         }
         #endregion
     }
