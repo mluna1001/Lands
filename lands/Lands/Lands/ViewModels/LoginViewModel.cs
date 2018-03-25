@@ -56,7 +56,7 @@
             this.IsRemembered = true;
             this.IsEnabled = true;
 
-            this.Email = "sitatyr.ctm@gmail.com";
+            this.Email = "kylo@gmail.com";
             this.Password = "123456";
 
             // http://restcountries.eu/rest/v2/all
@@ -136,10 +136,17 @@
                 return;
             }
 
+            var user = await this.apiService.GetUserByEmail(
+                apiSecurity,
+                "/api",
+                "/Users/GetUserByEmail",
+                this.Email);
+
             var mainViewModel = MainViewModel.GetInstance();
             //mainViewModel.Token = token;
             mainViewModel.Token = token.AccessToken;
             mainViewModel.TokenType = token.TokenType;
+            mainViewModel.User = user;
 
             if (this.IsRemembered)
             {

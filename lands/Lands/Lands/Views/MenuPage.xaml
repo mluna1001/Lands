@@ -10,6 +10,16 @@
     Title="{i18n:Translate Menu}">
     <ContentPage.Content>
         <StackLayout>
+            <Image
+                Source="onu"
+                WidthRequest="150">
+            </Image>
+            <Label
+                FontAttributes="Bold"
+                FontSize="Large"
+                Text="{Binding User.FullName, StringFormat='Hola: {0}'}"
+                TextColor="White">
+            </Label>
             <ListView 
                 BackgroundColor="Navy"
                 ItemsSource="{Binding Menus}"

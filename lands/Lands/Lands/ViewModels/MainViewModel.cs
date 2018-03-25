@@ -1,12 +1,10 @@
 ﻿namespace Lands.ViewModels
 {
-    using GalaSoft.MvvmLight.Command;
-    using Lands.Helpers;
+    using Domain;
+    using Helpers;
     using Models;
-    using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using System.Windows.Input;
 
     public class MainViewModel
     {
@@ -40,6 +38,8 @@
             get;
             set;
         }
+
+        public User User { get; set; }
 
         #endregion
 
