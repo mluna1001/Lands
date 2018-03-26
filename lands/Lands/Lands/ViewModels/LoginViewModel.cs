@@ -132,7 +132,7 @@
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
                     Languages.Error,
-                    token.ErrorDescription,
+                    Languages.LoginError,
                     Languages.Accept);
                 this.Password = string.Empty;
                 return;
@@ -149,20 +149,26 @@
             var userLocal = Helpers.Conveter.ToUserLocal(user);
 
             var mainViewModel = MainViewModel.GetInstance();
-            //mainViewModel.Token = token;
-            mainViewModel.Token = token.AccessToken;
-            mainViewModel.TokenType = token.TokenType;
+            mainViewModel.Token = token;
+            //mainViewModel.Token = token.AccessToken;
+            //mainViewModel.TokenType = token.TokenType;
             mainViewModel.User = userLocal;
 
             if (this.IsRemembered)
             {
-                Settings.Token = token.AccessToken;
-                Settings.TokenType = token.TokenType;
-                this.dataService.DeleteAllAndInsert(userLocal);
+                //Settings.Token = token.AccessToken;
+                //Settings.TokenType = token.TokenType;
+                Settings.IsRemembered = "true";
+            }
+            else
+            {
+                Settings.IsRemembered = "false";
             }
 
-            mainViewModel.Lands = new LandsViewModel();
+            this.dataService.DeleteAllAndInsert(userLocal);
+            this.dataService.DeleteAllAndInsert(token);
 
+            mainViewModel.Lands = new LandsViewModel();
             //await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
             Application.Current.MainPage = new MasterPage();
 

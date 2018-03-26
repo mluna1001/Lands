@@ -13,46 +13,46 @@
             }
         }
 
-        //const string isRemembered = "IsRemembered";
-        const string tokenId = "Token";
-        const string tokenTypeId = "TokenType";
+        const string isRemembered = "IsRemembered";
+        //const string tokenId = "Token";
+        //const string tokenTypeId = "TokenType";
 
         static readonly string stringDefault = string.Empty;
 
-        public static string Token
-        {
-            get
-            {
-                return AppSettings.GetValueOrDefault(tokenId, stringDefault);
-            }
-            set
-            {
-                AppSettings.AddOrUpdateValue(tokenId, value);
-            }
-        }
-
-        public static string TokenType
-        {
-            get
-            {
-                return AppSettings.GetValueOrDefault(tokenTypeId, stringDefault);
-            }
-            set
-            {
-                AppSettings.AddOrUpdateValue(tokenTypeId, value);
-            }
-        }
-
-        //public static string IsRemembered
+        //public static string Token
         //{
         //    get
         //    {
-        //        return AppSettings.GetValueOrDefault(isRemembered, stringDefault);
+        //        return AppSettings.GetValueOrDefault(tokenId, stringDefault);
         //    }
         //    set
         //    {
-        //        AppSettings.AddOrUpdateValue(isRemembered, value);
+        //        AppSettings.AddOrUpdateValue(tokenId, value);
         //    }
         //}
+
+        //public static string TokenType
+        //{
+        //    get
+        //    {
+        //        return AppSettings.GetValueOrDefault(tokenTypeId, stringDefault);
+        //    }
+        //    set
+        //    {
+        //        AppSettings.AddOrUpdateValue(tokenTypeId, value);
+        //    }
+        //}
+
+        public static string IsRemembered
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(isRemembered, stringDefault);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(isRemembered, value);
+            }
+        }
     }
 }
