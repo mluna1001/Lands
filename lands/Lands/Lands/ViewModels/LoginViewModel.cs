@@ -147,6 +147,7 @@
                 this.Email);
 
             var userLocal = Helpers.Conveter.ToUserLocal(user);
+            userLocal.Password = this.Password;
 
             var mainViewModel = MainViewModel.GetInstance();
             mainViewModel.Token = token;

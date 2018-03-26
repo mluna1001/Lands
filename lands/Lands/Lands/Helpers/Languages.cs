@@ -311,5 +311,15 @@
         {
             get { return Resource.IncorrectPassword; }
         }
+
+        public static string PasswordError
+        {
+            get { return Resource.PasswordError; }
+        }
+
+        public static string ErrorChangingPassword
+        {
+            get { return Resource.ErrorChangingPassword; }
+        }
     }
 }

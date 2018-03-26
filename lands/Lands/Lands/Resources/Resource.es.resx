@@ -408,4 +408,10 @@
   <data name="IncorrectPassword" xml:space="preserve">
     <value>Contraseña actual es incorrecta.</value>
 </data>
+  <data name="PasswordError" xml:space="preserve">
+    <value>La contraseña actual es incorrecta</value>
+  </data>
+  <data name="ErrorChangingPassword" xml:space="preserve">
+    <value>La contraseña no se puede cambiar, intente más tarde</value>
+  </data>
 </root>
