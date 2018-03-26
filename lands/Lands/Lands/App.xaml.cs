@@ -1,6 +1,8 @@
 ﻿namespace Lands
 {
     using Helpers;
+    using Models;
+    using Services;
     using Views;
     using ViewModels;
     using Xamarin.Forms;
@@ -27,9 +29,12 @@
             }
             else
             {
+                var dataService = new DataService();
+                var user = dataService.First<UserLocal>(false);
                 var mainViewModel = MainViewModel.GetInstance();
                 mainViewModel.Token = Settings.Token;
                 mainViewModel.TokenType = Settings.TokenType;
+                mainViewModel.User = user;
                 mainViewModel.Lands = new LandsViewModel();
                 MainPage = new MasterPage();
                 // Si no funciona la linea anterior, intentar esta otra
