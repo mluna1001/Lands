@@ -23,8 +23,10 @@
             }
         }
 
-        private void Navigate()
+        private async void Navigate()
         {
+            App.Master.IsPresented = false;
+
             if (this.PageName == "LoginPage")
             {
                 Settings.Token = string.Empty;
@@ -33,6 +35,11 @@
                 mainViewModel.Token = string.Empty;
                 mainViewModel.TokenType = string.Empty;
                 Application.Current.MainPage = new NavigationPage(new LoginPage());
+            }
+            else if (this.PageName == "MyProfilePage")
+            {
+                MainViewModel.GetInstance().MyProfile = new MyProfileViewModel();
+                await App.Navigator.PushAsync(new MyProfilePage());
             }
         }
         #endregion

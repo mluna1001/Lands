@@ -25,6 +25,7 @@
         }
 
         [HttpPost]
+        [Authorize]
         [Route("GetUserByEmail")]
         public async Task<IHttpActionResult> GetUser(JObject form)
         {
@@ -54,17 +55,23 @@
         }
 
         // PUT: api/Users/5
+        [Authorize]
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutUser(int id, User user)
         {
-            if (!ModelState.IsValid)
+            if (user.ImageArray != null && user.ImageArray.Length > 0)
             {
-                return BadRequest(ModelState);
-            }
+                var stream = new MemoryStream(user.ImageArray);
+                var guid = Guid.NewGuid().ToString();
+                var file = string.Format("{0}.jpg", guid);
+                var folder = "~/Content/Images";
+                var fullpath = string.Format("{0}/{1}", folder, file);
+                var response = FilesHelper.UploadPhoto(stream, folder, file);
 
-            if (id != user.UserId)
-            {
-                return BadRequest();
+                if (response)
+                {
+                    user.ImagePath = fullpath;
+                }
             }
 
             db.Entry(user).State = EntityState.Modified;
@@ -85,18 +92,13 @@
                 }
             }
 
-            return StatusCode(HttpStatusCode.NoContent);
+            return Ok(user);
         }
 
         // POST: api/Users
         [ResponseType(typeof(User))]
         public async Task<IHttpActionResult> PostUser(User user)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             if (user.ImageArray != null && user.ImageArray.Length > 0)
             {
                 var stream = new MemoryStream(user.ImageArray);
