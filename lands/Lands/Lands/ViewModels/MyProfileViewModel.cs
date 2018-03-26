@@ -233,17 +233,17 @@
                 return;
             }
 
-            //var userApi = await this.apiService.GetUserByEmail(
-            //    apiSecurity,
-            //    "/api",
-            //    "/Users/GetUserByEmail",
-            //    MainViewModel.GetInstance().TokenType,
-            //    MainViewModel.GetInstance().Token,
-            //    this.User.Email);
-            //var userLocal = Converter.ToUserLocal(userApi);
+            var userApi = await this.apiService.GetUserByEmail(
+                apiSecurity,
+                "/api",
+                "/Users/GetUserByEmail",
+                MainViewModel.GetInstance().TokenType,
+                MainViewModel.GetInstance().Token,
+                this.User.Email);
+            var userLocal = Conveter.ToUserLocal(userApi);
 
-            //MainViewModel.GetInstance().User = userLocal;
-            //this.dataService.Update(userLocal);
+            MainViewModel.GetInstance().User = userLocal;
+            this.dataService.Update(userLocal);
 
             this.IsRunning = false;
             this.IsEnabled = true;
