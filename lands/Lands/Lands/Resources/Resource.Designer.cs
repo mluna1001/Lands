@@ -628,6 +628,15 @@ namespace Lands.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You don&apos;t have permission to see this option. contact the administrator..
+        /// </summary>
+        public static string PermissionTextDialog {
+            get {
+                return ResourceManager.GetString("PermissionTextDialog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Persian.
         /// </summary>
         public static string Persian {
@@ -804,6 +813,15 @@ namespace Lands.Resources {
         public static string UserRegisteredMessage {
             get {
                 return ResourceManager.GetString("UserRegisteredMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning.
+        /// </summary>
+        public static string WarningDialog {
+            get {
+                return ResourceManager.GetString("WarningDialog", resourceCulture);
             }
         }
     }

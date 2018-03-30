@@ -414,4 +414,10 @@
   <data name="ErrorChangingPassword" xml:space="preserve">
     <value>La contraseña no se puede cambiar, intente más tarde</value>
   </data>
+  <data name="WarningDialog" xml:space="preserve">
+    <value>Advertencia</value>
+  </data>
+  <data name="PermissionTextDialog" xml:space="preserve">
+    <value>No tienes permisos para ver esta opción. Contacta al administrador.</value>
+  </data>
 </root>

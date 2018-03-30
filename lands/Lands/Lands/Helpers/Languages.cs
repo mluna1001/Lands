@@ -321,5 +321,15 @@
         {
             get { return Resource.ErrorChangingPassword; }
         }
+
+        public static string WarningDialog
+        {
+            get { return Resource.WarningDialog; }
+        }
+
+        public static string PermissionTextDialog
+        {
+            get { return Resource.PermissionTextDialog; }
+        }
     }
 }
